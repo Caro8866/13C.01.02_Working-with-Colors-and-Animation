@@ -7,19 +7,25 @@
 
 /* Colours */
 :root {
+  /* Accidently made primary colors the secondary and vice versa. 
+  The blues should be primary */
   --color-primary1: #f5eddc;
   --color-primary2: #eee3cb;
   --color-primary3: #e8dbbf;
   --color-primary4: #d9ceb5;
   --color-secondary1: #1b577a;
   --color-secondary2: #0a2f44;
+  --color-secondary3: #031925;
   --color-accent1: #b7483d;
+  --color---color-accent1darker: #491814;
+  --color-accent3: #db7c5f;
   --color-accent2: #2b6eb5;
 }
 /* Fonts */
 html {
   font-family: "Poppins", sans-serif;
   font-size: 1.2em;
+  overflow-x: hidden;
 }
 h1,
 h2,
@@ -62,10 +68,6 @@ a {
   color: var(--color-accent1);
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
 /* UI Elements */
 button {
   display: inline-block;
@@ -77,11 +79,44 @@ button {
   text-decoration: none;
   background-color: var(--color-accent1);
   color: var(--color-primary1);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+button {
+  background-color: var(--color-accent1);
+  color: var(--color-primary1);
+  border: solid 2px var(--color-secondary2);
+}
+
+button:hover {
+  background-color: var(--color-secondary2);
+  border: solid 2px var(--color-accent1);
+  color: var(--color-accent1);
 }
 
 .dark_button {
   background-color: var(--color-primary1);
   color: var(--color-secondary1);
+  border: solid 2px var(--color-secondary1);
+}
+
+.dark_button:hover {
+  background-color: var(--color-secondary1);
+  border: solid 2px var(--color-primary1);
+  color: var(--color-primary1);
+}
+
+.input_button {
+  background-color: var(--color-accent1);
+  color: var(--color-primary1);
+  border: none;
+}
+
+.input_button:hover {
+  background-color: var(--color-accent3);
+  color: var(--color-primary1);
+  border: none;
 }
 
 input[type="text"] {
@@ -272,12 +307,12 @@ footer {
 
 footer h2,
 footer h3 {
-  color: var(--color-primary4);
+  color: var(--color-primary1);
   margin-bottom: 1rem;
 }
 
 footer a {
-  color: var(--color-primary1);
+  color: var(--color-accent3);
 }
 
 footer section.left {
@@ -306,4 +341,88 @@ footer section div {
     font-size: 3.052rem;
     line-height: 3.5rem;
   }
+}
+/* Animation sections */
+
+.progress {
+  position: fixed;
+  z-index: 200;
+  transform-origin: left;
+  height: 10px;
+  width: 100vw;
+  background-color: var(--color-accent1);
+  top: 0;
+}
+
+a {
+  height: auto;
+  width: auto;
+  display: inline-block;
+}
+
+a:hover {
+  cursor: pointer;
+  /* text-decoration: underline; */
+}
+
+a,
+ul a {
+  overflow: hidden;
+}
+
+a::after {
+  position: relative;
+  left: -100%;
+  display: block;
+  height: 3px;
+  content: "";
+  transition: all 0.4s ease-in-out;
+  background-color: var(--color-accent1);
+}
+
+a:hover::after {
+  transition: all 0.4s ease-in-out;
+  transform: translate(100%, 0) scaleX(100%);
+}
+
+/* Dark mode */
+
+.toggle {
+  position: relative;
+  width: 4rem;
+  height: 0.8rem;
+  background-color: var(--color-secondary2);
+  box-shadow: inset 0 0 0.3rem 0.1rem var(--color-secondary3);
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.toggle:after {
+  position: absolute;
+  content: "";
+  top: -8px;
+  left: -1px;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  transition: 1s ease-in-out;
+  background-color: var(--color-accent1);
+  box-shadow: inset 0 0 0.3rem 0.1rem var(--color-accent1darker);
+}
+
+.toggled:after {
+  transform: translateX(2.7rem);
+  background-color: var(--color-accent1);
+}
+
+.dark-mode {
+  --color-primary1: #000000;
+  --color-primary2: #191816;
+  --color-primary3: #7a7a79;
+  --color-primary4: #898681;
+  --color-secondary1: #155276;
+  --color-secondary2: #0b2b3e;
+  --color-accent1: #d89089;
+  --color-accent3: #eaa48f;
+  --color-accent2: #2b6eb5;
 }

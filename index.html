@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Color Assignment</title>
     <!-- Template adapted from https://www.freecodecamp.org/news/basic-html5-template-boilerplate-code-example/ -->
     <!-- Inspired by https://cequence.io/ & https://wage.numbered.studio/ for educational purpose-->
@@ -12,9 +12,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+        
     <nav>
         <a class="logo" href="index.html">Logo</a>
         <div>
@@ -23,8 +24,9 @@
             <li><a href="#solution">Solution</a></li>
           </ul>
         </div>
-        <button type="button">Learn More &#x2794;</button>
-      </ul>
+        <button type="button" >Learn More &#x2794;</button>
+          <div id="dark-mode-toggle"class="toggle"></div>
+  
     </nav>
     <header>
       <div class="header_text">
@@ -35,7 +37,9 @@
         <button class="dark_button" type="button">Request Demo &#x2794;</button>
       </div>
       <div class="header_graphics">
-        <object data="graphics/website-optimization-layout-svgrepo-com.svg"> </object>
+
+        <object data="graphics/website-optimization-layout-svgrepo-com.svg"> </object> 
+  
       </div>
     </header>
     <main>
@@ -51,7 +55,7 @@
     <section id="product">
       <article>
         <section class="product_text">
-          <h2>Fremilut nobis me absoluto quam obligatorio</h3>
+          <h2>Fremilut nobis me absoluto quam obligatorio</h2>
           <p>
             Hic litteras ad cum convallis sinistras, natus contemptor sem
             symbola consequatur typi accessus praeditus non EA-quaeque
@@ -76,6 +80,7 @@
       <article>
         <section class="product_graphics">
           <object data="graphics/website-network-server-svgrepo-com.svg"> </object>
+          
         </section>
         <section class="product_text">
           <h3>
@@ -97,7 +102,7 @@
           Quis hic sinistris si eum sinistris scandalum quis lorem providebunt mi
           laesae consurgunt cum magni hac si commodi unde aspirare uidem.
         </p>
-        <input type="text"></input><button type="button">Request Demo &#x2794;</button>
+        <input type="text"></input><button type="button" class="input_button">Request Demo &#x2794;</button>
       </div>
     </section>
     </main>
@@ -129,6 +134,7 @@
         </div>
       </section>
     </footer>
-    <script src="script.js"></script>
+    <div class="progress"></div>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
